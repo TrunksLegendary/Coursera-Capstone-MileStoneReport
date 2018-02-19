@@ -16,3 +16,8 @@
 - Demonstrate that the raw data is downloaded (if not already present) and be able to manage the data.
 - Present a description of the data using statistics and visualization using charts.
 - Review of findings.
+
+---
+> ### rPub Repository: 
+
+http://rpubs.com/TrunksLegendary/MileStoneReport
