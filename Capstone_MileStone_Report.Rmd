@@ -102,8 +102,8 @@ term.doc.matrix <- as.matrix(term.doc.matrix)
 word.freqs <- sort(rowSums(term.doc.matrix), decreasing=TRUE) 
 dm <- data.frame(word=names(word.freqs), freq=word.freqs)
 ```
-
-# Data Visualization
+---
+> # Data Visualization
 
 This "Word Cloud" provides a quick visualization of the most common words in corpus.
 
@@ -118,15 +118,16 @@ bigram <- NGramTokenizer(corpus, Weka_control(min = 2, max = 2))
 trigram <- NGramTokenizer(corpus, Weka_control(min = 3, max = 3))
 ```
 
-# Exploratory Analysis
+---
+
+> # Exploratory Analysis
 
 Analysis of the dataset: 
 
-I will proceed to carry out Unigram, Bigram and Trigram which make used of the RWeka Package.
 
-### Unigram Word Frequency:
+> ### Unigram Word Frequency:
 
-The Unigram charte below shows the most common 25 Unigrams
+The Unigram chart below presents the most common 25 Unigrams
 
 
 
@@ -141,9 +142,10 @@ ggplot(unigram.df[1:25,], aes(x=unigram, y=Freq)) +
   theme(axis.text.x=element_text(angle=90, hjust=1))
 ```
 
-### BiGram Word Frequency:
 
-The Biigram charte below shows the most common 25 Unigrams
+> ### BiGram Word Frequency:
+
+The Biigram chart below represents the most common 25 Unigrams
 
 
 ```{r}
@@ -157,11 +159,11 @@ ggplot(bigram.df[1:25,], aes(x=bigram, y=Freq)) +
   theme(axis.text.x=element_text(angle=90, hjust=1))
 ```
 
-]
 
-### Trigram Word Frequency:
 
-The Trigram charte below shows the most common 25 Unigrams
+> ### Trigram Word Frequency:
+
+The Trigram chart below presents the most common 25 Unigrams
 ```{r}
 trigram.df <- data.frame(table(trigram))
 trigram.df <- trigram.df[order(trigram.df$Freq, decreasing = TRUE),]
@@ -175,7 +177,9 @@ ggplot(trigram.df[1:25,], aes(x=trigram, y=Freq)) +
 
 
 
-## Conclusion
+
+---
+> ## Conclusion
 
 The large datasets is processor and time intensive while computing the results.
 
@@ -186,8 +190,8 @@ the data sets are pretty big and processing them requires time and computing res
 most of the top ranking n-grams contains English stop words
 using the n-grams we can conceive a crude algorithm to suggest the next words in a text editor; 
 
-
-## Next Steps
+---
+> ## Next Steps
 
 
 For example, the probability of an untyped word can be estimated from the frequencies in the corpus of the n-grams containing that word in the last position conditioned on the presence the last typed word(s) as the first n - 1 words in the n-gram. One can use a weighted sum of frequencies, with the weights calculated using machine learning.
@@ -197,4 +201,9 @@ For example, the probability of an untyped word can be estimated from the freque
 - Tune the prediction model for efficiency and accuracy.
 - Build a Shiny App: giving one or more words, the prediction app will be suggest a list of possibles "next word" using the prediction algorithm.
 
+---
+<!---
+> ### Github repository:
 
+https://github.com/TrunksLegendary/Coursera-Capstone-MileStoneReport
+--->
